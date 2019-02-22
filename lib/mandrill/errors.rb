@@ -59,9 +59,11 @@ module Mandrill
     end
     class UnknownMetadataFieldError < Error
     end
-    class BadGatewayError < Error
+    class ServiceUnavailableError < Error
     end
-    class GatewayTimeoutError < Error
+    class BadGatewayError < ServiceUnavailableError
+    end
+    class GatewayTimeoutError < ServiceUnavailableError
     end
 end
 

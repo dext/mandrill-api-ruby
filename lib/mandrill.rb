@@ -97,7 +97,7 @@ module Mandrill
                     raise Error, error_info['message']
                 end
             rescue JSON::ParserError
-                raise Error, "We received an unexpected error: code:#{status} body:#{body}"
+                raise ServiceUnavailableError, "We received an unexpected error: code:#{status} body:#{body}"
             end
         end
 
