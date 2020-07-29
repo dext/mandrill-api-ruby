@@ -1,5 +1,5 @@
 module Mandrill
-    class Error < Exception
+    class Error < StandardError
     end
     class ValidationError < Error
     end
@@ -58,6 +58,12 @@ module Mandrill
     class MetadataFieldLimitError < Error
     end
     class UnknownMetadataFieldError < Error
+    end
+    class ServiceUnavailableError < Error
+    end
+    class BadGatewayError < ServiceUnavailableError
+    end
+    class GatewayTimeoutError < ServiceUnavailableError
     end
 end
 
